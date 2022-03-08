@@ -1,0 +1,212 @@
+PS D:\Murali M V\Masai School\MERN Stack (Full Stack Web Development Course)\Unit-4\day_04\main assignment> mongo
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+myuse   0.000GB
+> use assignment 
+switched to db assignment
+> db
+assignment
+> show collections
+> db.createCollection("users")
+{ "ok" : 1 }
+> db.user.insert({
+...   first_name: "Blinnie",
+...   last_name: "Birchill",
+...   email: "bbirchill0@buzzfeed.com",
+...   gender: "Male",
+...   ip_address: "144.99.142.170",
+...   age: 24,
+... })
+WriteResult({ "nInserted" : 1 })
+> db.users.insertMany([       
+...   {
+...     first_name: "Morey",  
+...     last_name: "Barabich",
+...     email: "mbarabich1@theglobeandmail.com",
+...     gender: "Male",
+...     ip_address: "119.93.85.224",
+...     age: 18,
+...   },        
+...   {
+...     first_name: "Trude",
+...     last_name: "Gerger",
+...     email: "tgerger2@disqus.com",
+...     gender: "Male",
+...     ip_address: "230.4.111.213",
+...     age: 24,
+...   },
+...   {
+...     first_name: "Raimund",
+...     last_name: "Terbeek",
+...     email: "rterbeek3@oaic.gov.au",
+...     gender: "Female",
+...     ip_address: "125.61.156.79",
+...     age: 28,
+...   },
+...   {
+...     first_name: "Alva",
+...     last_name: "Fairrie",
+...     email: "afairrie4@eventbrite.com",
+...     gender: "Female",
+...     ip_address: "143.61.58.124",
+...     age: 34,
+...   },
+...   {
+...     first_name: "Weidar",
+...     last_name: "Haibel",
+...     email: "whaibel5@merriam-webster.com",
+...     gender: "Female",
+...     ip_address: "147.97.183.188",
+...     age: 64,
+...   },
+...   {
+...     first_name: "Chase",
+...     last_name: "Kimbell",
+...     email: "ckimbell6@columbia.edu",
+...     gender: "Male",
+...     ip_address: "163.246.195.188",
+...     age: 34,
+...   },
+...   {
+...     first_name: "Luisa",
+...     last_name: "Caulfield",
+...     email: "lcaulfield7@blogtalkradio.com",
+...     gender: "Female",
+...     ip_address: "13.7.64.95",
+...     age: 54,
+...   },
+...   {
+...     first_name: "Pru",
+...     last_name: "Gaiford",
+...     email: "pgaiford8@oakley.com",
+...     gender: "Male",
+...     ip_address: "0.51.64.114",
+...     age: 20,
+...   },
+...   {
+...     first_name: "Clea",
+...     last_name: "Henniger",
+...     email: "chenniger9@tmall.com",
+...     gender: "Male",
+...     ip_address: "95.84.3.4",
+...     age: 23,
+...   },
+... ])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("6227906ee9855dd5ce39b2de"),
+                ObjectId("6227906ee9855dd5ce39b2df"),
+                ObjectId("6227906ee9855dd5ce39b2e0"),
+                ObjectId("6227906ee9855dd5ce39b2e1"),
+                ObjectId("6227906ee9855dd5ce39b2e2"),
+                ObjectId("6227906ee9855dd5ce39b2e3"),
+                ObjectId("6227906ee9855dd5ce39b2e4"),
+                ObjectId("6227906ee9855dd5ce39b2e5"),
+                ObjectId("6227906ee9855dd5ce39b2e6")
+        ]
+}
+> db.users.find({}).pretty()
+{
+        "_id" : ObjectId("6227906ee9855dd5ce39b2de"),
+        "first_name" : "Morey",
+        "last_name" : "Barabich",
+        "email" : "mbarabich1@theglobeandmail.com",
+        "gender" : "Male",
+        "ip_address" : "119.93.85.224",
+        "age" : 18
+}
+{
+        "_id" : ObjectId("6227906ee9855dd5ce39b2df"),
+        "first_name" : "Trude",
+        "last_name" : "Gerger",
+        "email" : "tgerger2@disqus.com",
+        "gender" : "Male",
+        "ip_address" : "230.4.111.213",
+        "age" : 24
+}
+{
+        "_id" : ObjectId("6227906ee9855dd5ce39b2e0"),
+        "first_name" : "Raimund",
+        "last_name" : "Terbeek",
+        "email" : "rterbeek3@oaic.gov.au",
+        "gender" : "Female",
+        "ip_address" : "125.61.156.79",
+        "age" : 28
+}
+{
+        "_id" : ObjectId("6227906ee9855dd5ce39b2e1"),
+        "first_name" : "Alva",
+        "last_name" : "Fairrie",
+        "email" : "afairrie4@eventbrite.com",
+        "gender" : "Female",
+        "ip_address" : "143.61.58.124",
+        "age" : 34
+}
+{
+        "_id" : ObjectId("6227906ee9855dd5ce39b2e2"),
+        "first_name" : "Weidar",
+        "last_name" : "Haibel",
+        "email" : "whaibel5@merriam-webster.com",
+        "gender" : "Female",
+        "ip_address" : "147.97.183.188",
+        "age" : 64
+}
+{
+        "_id" : ObjectId("6227906ee9855dd5ce39b2e3"),
+        "first_name" : "Chase",
+        "last_name" : "Kimbell",
+        "email" : "ckimbell6@columbia.edu",
+        "gender" : "Male",
+        "ip_address" : "163.246.195.188",
+        "age" : 34
+}
+{
+        "_id" : ObjectId("6227906ee9855dd5ce39b2e4"),
+        "first_name" : "Luisa",
+        "last_name" : "Caulfield",
+        "email" : "lcaulfield7@blogtalkradio.com",
+        "gender" : "Female",
+        "ip_address" : "13.7.64.95",
+        "age" : 54
+}
+{
+        "_id" : ObjectId("6227906ee9855dd5ce39b2e5"),
+        "first_name" : "Pru",
+        "last_name" : "Gaiford",
+        "email" : "pgaiford8@oakley.com",
+        "gender" : "Male",
+        "ip_address" : "0.51.64.114",
+        "age" : 20
+}
+{
+        "_id" : ObjectId("6227906ee9855dd5ce39b2e6"),
+        "first_name" : "Clea",
+        "last_name" : "Henniger",
+        "email" : "chenniger9@tmall.com",
+        "gender" : "Male",
+        "ip_address" : "95.84.3.4",
+        "age" : 23
+}
+> db.users.findOne()        
+{
+        "_id" : ObjectId("6227906ee9855dd5ce39b2de"),
+        "first_name" : "Morey",
+        "last_name" : "Barabich",
+        "email" : "mbarabich1@theglobeandmail.com",
+        "gender" : "Male",
+        "ip_address" : "119.93.85.224",
+        "age" : 18
+}
+> db.users.update({age:24},{$set:{age:10}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.users.updateMany({gender:"Female"},{$set:{age:20}})
+{ "acknowledged" : true, "matchedCount" : 4, "modifiedCount" : 4 }
+> db.users.deleteOne({gender:"Female"},{$set:{age:20}}) 
+{ "acknowledged" : true, "deletedCount" : 1 }
+> db.users.deleteMany({gender:"Female"},{$set:{age:20}})
+{ "acknowledged" : true, "deletedCount" : 3 }
+> db.dropDatabase()
+{ "ok" : 1 }
